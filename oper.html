@@ -1,25 +1,62 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <style>
+      
+      
+        body{
+            background-size: 100% 100%;
+          
+         
+        }
+        h1{
+            background-color:azure;
+            width:90% ;
+            
+        }
+        .row{
+            padding-left:390px;
+            
+        }
+        
+        .container{
+            border-radius: 10px;
+            
+            padding:50px;
+            background-color:blanchedalmond;
+         }
+        
+         
+    </style>
 </head>
-</head>
+
 <body>
+
+   
+     
+            
     <div class="container">
+        <h1 align="center">Student Details</h1><br><br>   
+        
         <div class="row">
-    <label for="Name">Name</label>
+    <label for="Name">Student Name</label>
     <input type="text" id="uname">
     </div>
     <div class="row">
-    <label for="email">Email</label>
+    <label for="email">Student mail Id</label>
     <input type="text" id="email">
-    </div>
+    </div><br>
     <div class="row">
-        <button id="insert"  class="fa fa-user" onclick="CreateUser()">Register</button>
-        <button id="remove" class="fa fa-trash" onclick="Delete()">Delete</button> 
-        <button id="update" bgcolor="red" class="fa fa-edit" onclick="Update()">update</button>    
-        <button id="load" onclick="read()">read</button>    
+        <button id="insert"  class="fa fa-user btn btn-success " onclick="CreateUser()">Register</button>
+        <button id="remove" class="fa fa-trash btn btn-danger" onclick="Delete()">Delete</button> 
+        <button id="update"  class="fa fa-edit btn btn-info " onclick="Update()">update</button>    
+        <button id="load" class="fa  btn "onclick="read()">Read</button>    
+  
     </div>
     <div id="userList"></div>
+
+
 </div>
 </body>
 

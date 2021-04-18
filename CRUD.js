@@ -21,6 +21,7 @@ var  firebaseConfig =  {   apiKey : "AIzaSyBaaPJTDCEnYvgKv6CymKhCn5Xq1zPsp9g",
             email:email
         });
         console.log("User created");
+        read();
    }
    function Delete()  {
     console.log("create user");
@@ -28,6 +29,7 @@ var  firebaseConfig =  {   apiKey : "AIzaSyBaaPJTDCEnYvgKv6CymKhCn5Xq1zPsp9g",
     alert(uname);
      refer.child(uname).remove();
      console.log("User created");
+     read();
 }
 // function Update(){
 
@@ -38,17 +40,24 @@ var  firebaseConfig =  {   apiKey : "AIzaSyBaaPJTDCEnYvgKv6CymKhCn5Xq1zPsp9g",
         alert(uname);
         refer.child(uname).update({username:uname,email:email});
         console.log("Details updated Successfully");
-       }
+        read();
+    }
 function read(){
     console.log("Reading users");
     table=document.createElement("TABLE");
-    btn=document.createElement("button");
+    
     table.border="1"
     row=table.insertRow(-1)
     h1=row.insertCell(-1)
         h2=row.insertCell(-1)
-        h1.innerHTML="Username"
-        h2.innerHTML="EMail"
+        h1.innerHTML="Student Username"
+        h2.innerHTML="Student mailid"
+        table.align="center";
+        row.style.color="blue"
+        row.style.background="bisque";
+        row.style.fontSize="20px";
+        row.align="center"
+
     refer.on('child_added',(snap)=>{
         
         row1=table.insertRow(-1)
@@ -58,7 +67,7 @@ function read(){
         cell2=row1.insertCell(-1)
         cell2.innerHTML=snap.val().email
         
-        btn.innerHTML='HEllo';
+       
         userlist=document.getElementById("userList")
         userList.appendChild(table)
 })
